@@ -15,17 +15,34 @@
 	<div class="item item-divider">
 		Corporate Leadership
 	</div>
-	
-	<div ng-repeat="leader in leaders">
-		<div class="item item-avatar item-text-wrap">
-			<img ng-src="{{baseURL+leader.image}}" alt="{{leader.name}}">
-			<h2>{{leader.name}}</h2>
-			<h4>{{leader.designation}}</h4>
-			<p>{{leader.description}}</p>
-		</div>
+	<ion-list>
+	<ion-iem ng-repeat="leader in leaders">
+	<div class="item item-avatar item-text-wrap">
+		<img ng-src="{{baseURL+leader.image}}" alt="{{leader.name}}">
+		<h2>{{leader.name}}</h2>
+		<h4>{{leader.designation}}</h4>
+		<p>{{leader.description}}</p>
 	</div>
+</ion-iem>
+</ion-list>
 </div>
 
+<!-- <div class="card">
+	<div class="item item-divider">
+		<b>Corporate Leadership</b>    
+	</div>
+	<ion-item ng-repeat="leader in leaders" class="list-inset">
+	<div class="item item-avatar item-text-wrap">
+		<div style = 'background: url(baseURL+leader.image)'></div>
+
+		<img ng-src="{{baseURL+leader.image}}" alt="le dinh duy">
+		<b>{{leader.name}}</b>
+		<b>{{leader.designation}}</b>
+		<p>{{leader.description}}</p>
+	</div>
+</ion-item>  
+</div>     
+-->
 
 </ion-content>
 </ion-view>
