@@ -1,6 +1,6 @@
 angular.module('conFusion.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', ['$scope', '$ionicModal', '$timeout', function($scope, $ionicModal, $timeout) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -11,6 +11,7 @@ angular.module('conFusion.controllers', [])
 
     // Form data for the login modal
     $scope.loginData = {};
+    $scope.reservation = {}; 
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -37,9 +38,31 @@ angular.module('conFusion.controllers', [])
         // code if using a login system
         $timeout(function() {
             $scope.closeLogin();
-        }, 1000);
+        }, 10000);
     };
-})
+
+    $ionicModal.fromTemplateUrl('templates/reserve.html', {
+        scope: $scope
+    }).then(function(modal) {
+        $scope.reserveform = modal;
+    });
+
+    $scope.closeReserve = function() {
+        $scope.reserveform.hide();
+    };
+
+    $scope.reserve = function() {
+        $scope.reserveform.show();
+    };
+
+    $scope.doReserve = function() {
+        console.log('Doing reservation', $scope.reservation);
+
+        $timeout(function() {
+            $scope.closeReserve();
+        }, 1000);
+    };   
+}])
 
 .controller('MenuController', ['$scope', 'menuFactory', 'baseURL', function($scope, menuFactory, baseURL) {
     $scope.baseURL = baseURL;
