@@ -74,15 +74,6 @@ angular.module('conFusion.controllers', [])
     $scope.message = "Loading ...";
 
     $scope.dishes = dishes;
-    /*menuFactory.query(
-        function(response) {
-            $scope.dishes = response;
-            $scope.showMenu = true;
-        },
-        function(response) {
-            $scope.message = "Error: " + response.status + " " + response.statusText;
-        });*/
-
 
     $scope.select = function(setTab) {
         $scope.tab = setTab;
