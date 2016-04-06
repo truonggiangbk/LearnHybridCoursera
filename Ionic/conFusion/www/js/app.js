@@ -57,15 +57,15 @@ angular.module('conFusion', ['ionic', 'conFusion.controllers', 'conFusion.servic
                         templateUrl: 'templates/home.html',
                         controller: 'IndexController',
                         resolve: {
-                            dish: ['menuFactory', function(menuFactory) {
+                            dish: ['menuFactory', function (menuFactory) {
                                 return menuFactory.get({id: 0});
                             }],
 
-                            promotion: ['promotionFactory', function(promotionFactory) {
+                            promotion: ['promotionFactory', function (promotionFactory) {
                                 return promotionFactory.get({id: 0});
                             }],
 
-                            leader: ['corporateFactory', function(corporateFactory) {
+                            leader: ['corporateFactory', function (corporateFactory) {
                                 return corporateFactory.get({id: 3});
                             }]
                         }
@@ -80,7 +80,7 @@ angular.module('conFusion', ['ionic', 'conFusion.controllers', 'conFusion.servic
                         templateUrl: 'templates/aboutus.html',
                         controller: 'AboutController',
                         resolve: {
-                            leaders: ['corporateFactory', function(corporateFactory) {
+                            leaders: ['corporateFactory', function (corporateFactory) {
                                 return corporateFactory.query();
                             }]
                         }
@@ -105,7 +105,7 @@ angular.module('conFusion', ['ionic', 'conFusion.controllers', 'conFusion.servic
                         templateUrl: 'templates/menu.html',
                         controller: 'MenuController',
                         resolve: {
-                            dishes: ['menuFactory', function(menuFactory) {
+                            dishes: ['menuFactory', function (menuFactory) {
                                 return menuFactory.query();
                             }]
                         }
